@@ -3,11 +3,12 @@
 #set text(lang: "de")
 
 #let blimm(
-  annotations: "",
+  annotations: "Brief",
   recipient: "",
   reference-signs: (),
-  date: "",
-  subject: "Empty Subject",
+  date: datetime.today(),
+  date-format: "[year]-[month]-[day]",
+  subject: "Leerer Betreff",
   body
 ) = {
   show: letter-simple.with(
@@ -24,11 +25,19 @@
 
     reference-signs: reference-signs,
 
-    date: datetime.today().display(),
+    date: date.display(date-format),
     subject: subject,
   )
 
   body
+
+  [
+    #v(2cm)
+
+    Mit freundlichen Grüßen
+    #v(1cm)
+    Fabian Weik
+  ]
 }
 
 #show: blimm.with(
@@ -52,11 +61,3 @@ Ich lege deshalb Einspruch gegen den oben genannten Einkommensteuerbescheid ein
 und bitte Sie, die Abschreibung anzuerkennen.
 
 Anbei erhalten Sie eine Kopie der Rechnung des Gerätes.
-
-Mit freundlichen Grüßen
-#v(1cm)
-Anja Ahlsen
-
-#v(1fr)
-*Anlagen:*
-- Rechnung
