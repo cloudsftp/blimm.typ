@@ -1,6 +1,6 @@
 #import "@preview/letter-pro:2.1.0": letter-simple
 
-#set text(lang: "de")
+#set text(lang: "en")
 
 #let blimm(
   annotations: "Brief",
@@ -31,13 +31,23 @@
 
   body
 
-  [
-    #v(2cm)
+  v(2cm)
 
-    Mit freundlichen Grüßen
-    #v(1cm)
-    Fabian Weik
-  ]
+  context {
+    if text.lang == "de" {
+      [
+        Mit freundlichen Grüßen
+        #v(1cm)
+        Fabian Weik
+      ]
+    } else {
+      [
+        Yours sincerely,
+        #v(1cm)
+        Fabian Weik
+      ]
+    }
+  }
 }
 
 #show: blimm.with(
