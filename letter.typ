@@ -3,12 +3,13 @@
 #set text(lang: "en")
 
 #show: blimm.with(
-  recipient: [
-    Fabian Weik\
-    Unterer Espach 18\
-    73660 Urbach
-  ],
+  recipient: (
+    name: "John Doe",
+    street: "Kirchenstraße 1",
+    city: "Schorndorf",
+  ),
   subject: "Example Letter",
+  both-sign: true,
 )
 
 // Insert body here
