@@ -2,7 +2,12 @@
 
 #let blimm(
   annotations: "",
-  recipient: "Empty Recipient",
+  recipient: (
+    company: "energiesandsuch",
+    name: "John Doe",
+    street: "Kirchstraße 1",
+    city: "70563 Stuttgart"
+  ),
   reference-signs: (),
   date: datetime.today(),
   date-format: "[year]-[month]-[day]",
@@ -20,7 +25,12 @@
     ),
 
     annotations: annotations,
-    recipient: recipient,
+    recipient: [
+        #recipient.company \
+        #recipient.name \
+        #recipient.street \
+        #recipient.city
+    ],
 
     reference-signs: reference-signs,
 
@@ -38,13 +48,13 @@
     if text.lang == "de" {
       [
         Mit freundlichen Grüßen
-        #v(1cm)
+        #v(1.5cm)
         Fabian Weik
       ]
     } else {
       [
         Yours sincerely,
-        #v(1cm)
+        #v(1.5cm)
         Fabian Weik
       ]
     }
