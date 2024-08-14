@@ -25,12 +25,25 @@
     ),
 
     annotations: annotations,
-    recipient: [
-        #recipient.company \
-        #recipient.name \
-        #recipient.street \
-        #recipient.city
-    ],
+    recipient: {
+       if "company" in recipient {
+         recipient.company
+       }
+       linebreak()
+
+       recipient.name
+       linebreak()
+
+       recipient.street
+       linebreak()
+
+       recipient.city
+
+       if "country" in recipient {
+         linebreak()
+         recipient.country
+       }
+    },
 
     reference-signs: reference-signs,
 
