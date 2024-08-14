@@ -12,6 +12,7 @@
   date: datetime.today(),
   date-format: "[year]-[month]-[day]",
   subject: "Empty Subject",
+  both-sign: false,
   body
 ) = {
   show: letter-simple.with(
@@ -61,15 +62,18 @@
     if text.lang == "de" {
       [
         Mit freundlichen Grüßen
-        #v(1.5cm)
-        Fabian Weik
       ]
     } else {
       [
         Yours sincerely,
-        #v(1.5cm)
-        Fabian Weik
       ]
     }
+  }
+  v(1.5cm)
+  [Fabian Weik]
+  if both-sign {
+    h(3fr)
+    recipient.name
+    h(2fr)
   }
 }
