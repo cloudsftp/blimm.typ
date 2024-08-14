@@ -9,7 +9,6 @@
     city: "Schorndorf",
   ),
   subject: "Example Letter",
-  both-sign: true,
 )
 
 // Insert body here
