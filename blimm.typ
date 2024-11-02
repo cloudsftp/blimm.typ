@@ -18,7 +18,7 @@
   show: letter-simple.with(
     sender: (
       name: "Fabian Weik",
-      address: "Ostlandstraße 25, 32339 Espelkamp",
+      address: "Kurt-Schumacher-Straße 64, 67663 Kaiserslautern",
       extra: [
         Tel: #link("tel:+4917634969240")[+49 176 34969240]\
         E-Mail: #link("mailto:fabian.weik@protonmail.com")[fabian.weik\@protonmail.com]\
